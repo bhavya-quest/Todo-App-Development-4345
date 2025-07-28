@@ -1,0 +1,72 @@
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Focus styles */
+button:focus,
+input:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Animation for completed todos */
+.line-through {
+  position: relative;
+}
+
+.line-through::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  animation: strikethrough 0.3s ease-out;
+}
+
+@keyframes strikethrough {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Gradient text animation */
+.bg-clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
